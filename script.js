@@ -47,8 +47,6 @@ for (const item of arr) {
   console.log(item);
 }
 
-console.clear();
-
 // Objects are mutable
 
 // dot notation
@@ -81,3 +79,54 @@ student.phoneNumbers.pop();
 
 // prevent any mutations to an object (or array)
 Object.freeze(student);
+
+console.clear();
+
+// Value vs Reference
+
+const title = "javaScript: The Good Parts";
+title[0] = "J";
+// javaScript: The Good Parts
+
+let string1 = "Hello";
+let string2 = "Hello";
+// Primitives are copied by value
+let string3 = string1;
+
+// Primitives (strings, numbers...) are compared by their values.
+string1 === string2; // true
+string1 === string3; // true
+string2 === string3; // true
+
+string1 = "Goodbye";
+string1 !== string3; // true
+string1 !== string2; // true
+
+string1; // "Goodbye"
+string2; // "Hello"
+string3; // "Hello"
+
+let arr1 = ["Hello"];
+let arr2 = ["Hello"];
+
+arr1 !== arr2; // true
+
+let arr3 = arr1;
+arr1 === arr3; // true
+
+arr1[0] = "Goodbye";
+
+// arr3 = ["!!!"];
+
+arr1.push({ foo: "bar" });
+arr1 === arr3; // true
+
+// .slice() performs a shallow copy
+// arr1.slice();
+// arr3.shift();
+
+// let arr4 = [];
+// arr1.forEach(function(el) {
+//   arr4.push(el);
+// });
+// arr3 = arr4;
