@@ -1,0 +1,76 @@
+/* select by type */
+body {
+  background-color: lightcyan;
+}
+
+/* select by class */
+.container {
+  text-align: center;
+}
+
+/* select all paragraphs <p> that are descendants of elements with class box */
+.box p {
+  color: teal;
+  border: 1px solid black;
+}
+
+/* select all paragraphs that are direct children of elements with class box */
+.box > p {
+  color: goldenrod;
+}
+
+.box > div > p {
+  background-color: hotpink;
+}
+
+.selected {
+  border: 1px dotted pink;
+}
+
+/* select the subsequent li to any element with the class selected */
+.selected + li {
+  color: peachpuff;
+}
+
+/* selects the first-child in any ul */
+/* it also selects the last-child in any ol */
+ul :first-child,
+ol :last-child {
+  color: crimson;
+}
+
+/* selects all second children of an ol (indexes are 1-based) */
+ol :nth-child(2) {
+  border: 3px solid burlywood;
+}
+
+/* selects all the children with an even position in an ol */
+ol :nth-child(even) {
+  background-color: cornsilk;
+}
+
+/* combine selectors */
+/* select all the divs with class box */
+div.box {
+  background-color: purple;
+  color: white;
+}
+
+/* selects anchor tags <a> with an href equal to "#" */
+a[href="#"] {
+  background-color: salmon;
+}
+
+/* selects anchor tags <a> where the href attribute ends with ".html" */
+a[href$=".html"] {
+  background-color: silver;
+}
+
+/* selects anchor tags <a> where the href attribute starts with "log" */
+a[href^="log"] {
+  background-color: springgreen;
+}
+
+a[href*="o"] {
+  color: white;
+}
