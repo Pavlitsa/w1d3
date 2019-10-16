@@ -122,8 +122,8 @@ arr1.push({ foo: "bar" });
 arr1 === arr3; // true
 
 // .slice() performs a shallow copy
-// arr1.slice();
-// arr3.shift();
+arr1.slice();
+arr3.shift();
 
 // let arr4 = [];
 // arr1.forEach(function(el) {
